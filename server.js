@@ -168,7 +168,7 @@ app.get("/gods/:id", (req, res) => {
   const id = req.params.id
   God.findById(id)
     .then((god) => {
-      res.render("gods/show.liquid", god);
+      res.render("gods/show.liquid", {god});
     })
     .catch((error) => {res.json(error)});
 })
