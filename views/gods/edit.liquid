@@ -1,1 +1,56 @@
 <h1>Edit</h1>
+
+
+<div>
+  <form action="/gods/{{god._id}}?_method=PUT" method="post">
+  <fieldset>
+    <legend>Edit {{god.name}}</legend>
+      <label>
+        Name: <input type="text" name="name" placeholder="name" value="{{god.name}}"/>
+      </label>
+      <label>
+        Class: <select name="class" value="{{god.class}}">
+          <option value="Warrior">Warrior</option>
+          <option value="Assassan">Assassan</option>
+          <option value="Hunter">Hunter</option>
+          <option value="Mage">Mage</option>
+          <option value="Guardian">Guardian</option>
+        </select>
+      </label>
+      <label>
+        Passive Name: <input type="text" name="passive" placeholder="Passive Name" value="{{god.passive}}">
+      </label>
+      <label>
+        Passive Description: <textarea name="passiveDes" placeholder="Enter passive description">{{god.passiveDes}}</textarea>
+      </label>
+      <label>
+        Ability 1: <input type="text" name="ability1" placeholder="First Ability" value="{{god.ability1}}">
+      </label>
+      <label>
+        Ability 1 Description: <textarea name="ability1Des" placeholder="First Ability Description" valu>{{god.ability1Des}}</textarea>
+      </label>
+      <label>
+        Ability 2: <input type="text" name="ability2" placeholder="Second Ability" value="{{god.ability2}}">
+      </label>
+      <label>
+        Ability 2 Description: <textarea name="ability2Des" placeholder="Second Ability Description" valu>{{god.ability2Des}}</textarea>
+      </label>
+      <label>
+        Ability 3: <input type="text" name="ability3" placeholder="Third Ability" value="{{god.ability3}}">
+      </label>
+      <label>
+        Ability 3 Description: <textarea name="ability3Des" placeholder="Third Ability Description">{{god.ability3Des}}</textarea>
+      </label>
+      <label>
+        Ultimate: <input type="text" name="ult" placeholder="Ultimate Ability" value="{{god.ult}}">
+      </label>
+      <label>
+        Ultimate Description: <textarea name="ultDes" placeholder="Ultimate Ability Description">{{god.ultDes}}</textarea>
+      </label>
+      <label>
+        Image Link <input type="text" name ="img" placeholder="Please enter a direct link to your image" value="{{god.img}}">
+      </label>
+  </fieldset>
+  <input type="submit" value = "Update {{god.name}}">
+  </form>
+</div>

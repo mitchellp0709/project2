@@ -1,1 +1,56 @@
 <h1>New</h1>
+
+
+<div>
+  <form action="/gods" method="post">
+  <fieldset>
+    <legend>Create New God</legend>
+      <label>
+        Name: <input type="text" name="name" placeholder="name">
+      </label>
+      <label>
+        Class: <select name="class">
+          <option value="Warrior">Warrior</option>
+          <option value="Assassan">Assassan</option>
+          <option value="Hunter">Hunter</option>
+          <option value="Mage">Mage</option>
+          <option value="Guardian">Guardian</option>
+        </select>
+      </label>
+      <label>
+        Passive Name: <input type="text" name="passive" placeholder="Passive Name">
+      </label>
+      <label>
+        Passive Description: <textarea name="passiveDes" placeholder="Enter passive description"></textarea>
+      </label>
+      <label>
+        Ability 1: <input type="text" name="ability1" placeholder="First Ability">
+      </label>
+      <label>
+        Ability 1 Description: <textarea name="ability1Des" placeholder="First Ability Description"></textarea>
+      </label>
+      <label>
+        Ability 2: <input type="text" name="ability2" placeholder="Second Ability">
+      </label>
+      <label>
+        Ability 2 Description: <textarea name="ability2Des" placeholder="Second Ability Description"></textarea>
+      </label>
+      <label>
+        Ability 3: <input type="text" name="ability3" placeholder="Third Ability">
+      </label>
+      <label>
+        Ability 3 Description: <textarea name="ability3Des" placeholder="Third Ability Description"></textarea>
+      </label>
+      <label>
+        Ultimate: <input type="text" name="ult" placeholder="Ultimate Ability">
+      </label>
+      <label>
+        Ultimate Description: <textarea name="ultDes" placeholder="Ultimate Ability Description"></textarea>
+      </label>
+      <label>
+        Image Link <input type="text" name ="img" placeholder="Please enter a direct link to your image">
+      </label>
+  </fieldset>
+  <input type="submit" value = "Create New God">
+  </form>
+</div>

@@ -105,7 +105,7 @@ app.get("/gods/seed", (req, res) => {
   God.deleteMany({})
     .then((data) => {
       God.create(godSeed)
-      .then((data)=>{res.json(data)})
+      .then((data)=>{res.redirect("/gods")})
   })
 })
 
@@ -145,16 +145,62 @@ app.get("/gods/new", (req, res) => {
   res.render("gods/new.liquid")
 })
 
+//CREATE ROUTE
+app.post("/gods", (req, res) => {
+  if (req.body.class === "Mage" || req.body.class === "Guardian") {
+    req.body.damageType = "Magical"
+  } else {
+    req.body.damageType = "Physical"
+  }
+
+  God.create(req.body)
+    .then((god) => {
+      res.redirect("/gods");
+    })
+    .catch((error) => {res.json(error)})
+})
+
 //EDIT ROUTE
+
 app.get("/gods/:id/edit", (req, res) => {
-  const id =req.params.id
-  res.render("gods/edit.liquid")
+  const id = req.params.id
+
+  if (req.body.class === "Mage" || req.body.class === "Guardian") {
+    req.body.damageType = "Magical";
+  } else {
+    req.body.damageType = "Physical";
+  }
+  God.findById(id)
+    .then((god) => {
+      res.render("gods/edit.liquid", { god });
+    })
+    .catch((error) => {res.json(error)});
+})
+
+
+//UPDATE ROUTE
+
+app.put("/gods/:id", (req, res) => {
+  const id = req.params.id
+  God.findByIdAndUpdate(id, req.body, { new: true })
+    .then((god) => {
+      res.redirect("/gods");
+    })
+    .catch((error) => {res.json(error)})
 })
 
 
 
+//DELETE ROUTE
 
-
+app.delete("/gods/:id", (req, res) => {
+  const id = req.params.id
+  God.findByIdAndRemove(id)
+    .then((god) => {
+      res.redirect("/gods");
+    })
+    .catch((error) => {res.json(error)});
+})
 
 
 

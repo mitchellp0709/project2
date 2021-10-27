@@ -1,5 +1,5 @@
 <h1>Index</h1>
-
+<a href="/gods/new"><button>New God</button></a>
 
 <div class = "all">
   {% for god in gods %}
@@ -14,7 +14,7 @@
       
 
       <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
-     <form class ="card-link" action="/god/{{god._id}}?_method=DELETE" method=post>
+     <form class ="card-link" action="/gods/{{god._id}}?_method=DELETE" method=post>
         <input type="submit" value="DELETE">
       </form>
     </div>
