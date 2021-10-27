@@ -1,0 +1,30 @@
+<h1>Index</h1>
+
+
+<div class = "all">
+  {% for god in gods %}
+
+
+  <div class="card" style="width: 18rem;">
+    <img src="{{god.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+    <h5 class="card-title1"><a href="/god/{{god._id}}">{{god.name}}</a></h5>
+    
+    <div class="buttons">
+      
+
+      <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
+     <form class ="card-link" action="/god/{{god._id}}?_method=DELETE" method=post>
+        <input type="submit" value="DELETE">
+      </form>
+    </div>
+     </div>
+</div>
+    {%endfor%}
+
+
+    <style>
+      img{
+        width:200px;
+      }
+    </style>
