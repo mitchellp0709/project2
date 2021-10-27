@@ -1,5 +1,8 @@
-<h1>Edit</h1>
+{% layout "layout.liquid" %} 
+{% block content %}
 
+<h1>Edit {{god.name}}</h1>
+<div class ="show-pic"><img  src="{{god.img}}"></div>
 
 <div>
   <form action="/gods/{{god._id}}?_method=PUT" method="post">
@@ -54,3 +57,4 @@
   <input type="submit" value = "Update {{god.name}}">
   </form>
 </div>
+{%endblock%}

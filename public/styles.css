@@ -1,0 +1,122 @@
+:root{
+  --main:white
+}
+
+body{
+  background-image: url("https://www.psu.com/wp/wp-content/uploads/2019/09/smite-and-realm-royale-to-get-crossplay-in-the-future.jpg");
+}
+ .all{
+    display:flex;
+    flex-wrap: wrap;
+ }
+ .card{
+    width:20%;
+   outline:2px solid gold;
+   color:gold;
+   padding: 20px;
+   height:fit-content;
+   margin:10px;
+   height:500px;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: column;
+   background-color: rgba(0,0,0,.7);
+  }
+  h1{
+    color:var(--main);
+    text-align: center;
+  }
+  .card-title1{
+    text-align: center;
+    font-size:2.5em;
+  }
+ .buttons{
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   
+ }
+ a{
+   color:rgba(145,230,239,255);
+ }
+ button{
+   color:gold;
+   background-color:red;
+   border: 2px solid gold;
+   transition: .2s ease-in-out
+ }
+ input[type="submit"]{
+    color:gold;
+   background-color:red;
+   border: 2px solid gold;
+   transition: .2s ease-in-out
+ }
+ button:hover{
+   color:red;
+   background-color:gold;
+   border: 2px solid red;
+ }
+ input[type="submit"]:hover{
+color:red;
+   background-color:gold;
+   border: 2px solid red;
+ }
+ .card-img-top{
+   width:500px
+ }
+ .card-img-top:hover{
+  opacity: .8;
+ }
+ nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:rgba(77,153,169,.8);
+    color:gold;
+    margin: 50px;
+    width:100%;
+    
+  }
+  .show-pic{
+    
+    display: flex;
+    justify-content: center;
+  }
+  img{
+    width:30%
+  }
+  h2{
+    color: var(--main);
+    text-align: center;
+  }
+  .abilities{
+    color:gold;
+    margin:10px;
+    display:flex;
+    margin:10px;
+  }
+  .abilityInfo{
+    background-color:rgba(77,153,169,.8);
+    margin:10px;
+  }
+fieldset{
+  width: 70%;
+  margin-left: 30px;
+}
+input[type="text"],textarea,select{
+  background-color:rgba(77,153,169,.8);
+  color:gold;
+  outline:2px solid gold;;
+}
+input[type="text"]:focus{
+  box-shadow: red;
+  border:2px solid red;
+}
+textarea:focus{
+  box-shadow: red;
+  border:2px solid red;
+}
+select:focus{
+  box-shadow: red;
+  border:2px solid red;
+}

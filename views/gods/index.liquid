@@ -1,12 +1,15 @@
-<h1>Index</h1>
+{% layout "layout.liquid" %} 
+{% block content %}
+
+<h1>Welcome to the Battleground</h1>
 <a href="/gods/new"><button>New God</button></a>
 
 <div class = "all">
   {% for god in gods %}
 
 
-  <div class="card" style="width: 18rem;">
-    <img src="{{god.img}}" class="card-img-top" alt="...">
+  <div class="card" >
+   <a href="/gods/{{god._id}}"><img src="{{god.img}}" class="card-img-top" alt="..."></a>
     <div class="card-body">
     <h5 class="card-title1"><a href="/gods/{{god._id}}">{{god.name}}</a></h5>
     
@@ -18,13 +21,11 @@
         <input type="submit" value="DELETE">
       </form>
     </div>
-     </div>
+  </div>
 </div>
     {%endfor%}
 
 
-    <style>
-      img{
-        width:200px;
-      }
-    </style>
+   
+
+    {% endblock %}

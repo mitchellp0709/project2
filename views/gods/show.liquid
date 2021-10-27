@@ -1,7 +1,9 @@
+{% layout "layout.liquid" %} 
+{% block content %}
 <h1>{{god.name}}</h1>
 <a href="/gods"><button>Back to Main Page</button></a>
 
-<img src="{{god.img}}">
+<div class="show-pic"><img src="{{god.img}}"></div>
 <nav>
   <p>Class: {{god.class}}</p>
    <p>Damage Type: {{god.damageType}}</p>
@@ -16,43 +18,41 @@
 <h2>Abilities</h2>
 
 <div class="abilities">
-  <div class="one">
-    <h3>{{god.ability1}}</h3>
+  <div id="one" class="abilityInfo">
+    <h3>First Ability</h3>
+    <h4>{{god.ability1}}</h4>
     <div class="ability1-description">
       {{god.ability1Des}}
     </div>
   </div>
-  <div class="two">
-    <h3>{{god.ability2}}</h3>
+  <div id="two" class="abilityInfo">
+    <h3>Second Ability</h3>
+    <h4>{{god.ability2}}</h4>
     <div class="ability2-description">
       {{god.ability2Des}}
     </div>
   </div>
-  <div class="three">
-     <h3>{{god.ability3}}</h3>
+  <div id="three" class="abilityInfo">
+    <h3>Third Ability</h3>
+     <h4>{{god.ability3}}</h4>
     <div class="ability3-description">
       {{god.ability3Des}}
     </div>
   </div>
-  <div class="ult">
-    <h3>{{god.ult}}</h3>
+  <div id="ult" class="abilityInfo">
+    <h3>Ultimate Ability</h3>
+    <h4>{{god.ult}}</h4>
     <div class="ult-description">
       {{god.ultDes}}
     </div>
   </div>
-  <div class="passive"></div>
-    <h3>{{god.passive}}</h3>
+  <div id="passive" class="abilityInfo">
+    <h3>Passive</h3>
+    <h4>{{god.passive}}</h3>
     <div class="ult-description">
       {{god.passiveDes}}
     </div>
-
-
-
-
-
-
-
-
+  </div>
 
 
 
@@ -60,20 +60,4 @@
 
 
 
-
-
-
-
-
-
-
-
-<style>
-  img{
-    width:200px
-  }
-  nav{
-    display: flex;
-    justify-content: space-between;
-  }
-</style>
+{%endblock%}
