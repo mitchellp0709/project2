@@ -26,6 +26,7 @@ const godSchema = new Schema({
   ult: { type: String },
   ultDes: { type: String },
   img: String,
+  onTeam: Boolean,
 });
 
 const God = model("God", godSchema)

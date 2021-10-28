@@ -2,8 +2,10 @@
 {% block content %}
 
 <h1>Welcome to the Battleground</h1>
+<div class="top-buttons">
 <a href="/gods/new"><button>New God</button></a>
-
+<a href="/gods/team"><button>View Team</button></a>
+</div>
 <div class = "all">
   {% for god in gods %}
 
@@ -14,7 +16,7 @@
     <h5 class="card-title1"><a href="/gods/{{god._id}}">{{god.name}}</a></h5>
     
     <div class="buttons">
-      
+      <a href="/gods/{{god._id}}/addteam"><button>Add to Team</button></a>
 
       <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
      <form class ="card-link" action="/gods/{{god._id}}?_method=DELETE" method=post>

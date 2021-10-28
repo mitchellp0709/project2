@@ -123,3 +123,23 @@ select:focus{
 label,legend{
   color:gold;
 }
+.card-team{
+  width:80%;
+   outline:2px solid gold;
+   color:gold;
+   padding: 20px;
+   height:fit-content;
+   margin:10px;
+   height:500px;
+   display: flex;
+   justify-content: space-between;
+   background-color: rgba(0,0,0,.7);
+  }
+
+  .card-title1-team{
+    position:relative;
+    top:5px;
+  }
+  #team-pic{
+    width:fit-content
+  }

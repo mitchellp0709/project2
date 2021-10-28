@@ -129,7 +129,32 @@ router.delete("/:id", (req, res) => {
     });
 });
 
+//Changes the onTeam attribute to True
 
+router.get("/:id/addteam", (req, res) => {
+  const id = req.params.id
+  God.findByIdAndUpdate(id, { onTeam: true })
+    .then((god) => {
+    res.redirect("/gods")
+  })
+})
+
+//Changes the onTeam attribute to False
+router.get("/:id/removeteam", (req, res) => {
+  const id = req.params.id;
+  God.findByIdAndUpdate(id, { onTeam: false }).then((god) => {
+    res.redirect("/gods/team");
+  });
+});
+
+router.get("/team", (req, res) => {
+  
+  God.find({ onTeam: true })
+    .then((gods) => {
+    res.render("gods/team.liquid",{gods})
+    })
+    .catch((error)=>{res.json(error)})
+})
 
 
 
@@ -151,28 +176,3 @@ router.get("/:id", (req, res) => {
 
 //export router
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -19,6 +19,7 @@ const godsSeed = [
     ultDes:
       "Achilles dashes forward and attacks. While dashing, Achilles will pass through minions, stop and hit the first enemy god he encounters, dealing damage to all he hits and executing gods below 30% Health. If Achilles kills a god with this ability, he can use it again, up to 5 times. As Achilles successfully Executes his enemies, he becomes more reckless in combat and leaves his heel exposed. Achilles will become more susceptible to damage, stacking up to 5 times.",
     img: "https://i.ytimg.com/vi/OQoqfa9_TtA/maxresdefault.jpg",
+    onTeam: false,
   },
   {
     name: "Agni",
@@ -40,6 +41,7 @@ const godsSeed = [
     ultDes:
       "Every 18 seconds, Agni gains a flaming halo that can be expended to summon a giant meteor at his ground target location. He can summon 1 every .8 seconds. Ignites Noxious Fumes.",
     img: "https://i.ytimg.com/vi/w_aGSGzkysU/maxresdefault.jpg",
+    onTeam: false,
   },
   {
     name: "Ah Muzen Cab",
@@ -61,6 +63,7 @@ const godsSeed = [
     ultDes:
       "Ah Muzen Cab fires off an enormous stinger that deals damage to all enemies in a line, sticking into the first god that is hit, applying Bees! and Crippling them for 3 seconds. If the target dies or after 3 seconds, the stinger falls onto the ground for 4 seconds. If Ah Muzen Cab picks up his stinger, he gains a significant reduction to Stinger's Cooldown.",
     img: "https://i.pinimg.com/736x/48/bd/dd/48bddd2fad13b0c7458a7b91095c1b3f.jpg",
+    onTeam: false,
   },
   {
     name: "Ah Puch",
@@ -82,6 +85,7 @@ const godsSeed = [
     ultDes:
       "Ah Puch unleashes an army of Wraiths from the Ninth Hell that swarm forward and reduce healing and deal damage to enemies they collide with.",
     img: "https://i.ytimg.com/vi/PDQW_nAgQRU/maxresdefault.jpg",
+    onTeam: false,
   },
   {
     name: "Amaterasu",
@@ -102,7 +106,8 @@ const godsSeed = [
     ult: "Dazzling Offensive",
     ultDes:
       "Amaterasu focuses the power of the heavens into an impressive 3 strike combination attack. The 2nd hit will do 20% more base damage and slow enemies by 30%. The 3rd hit will do 40% more base damage and stun enemies. She must hit an enemy with the 1st hit to receive the increased damage and CC on the 2nd hit. The same rule applies to the 2nd and 3rd hits.",
-    img: "https://i1.sndcdn.com/artworks-000145083322-tjshgf-t500x500.jpg",
+    img: "https://cdn.sanity.io/images/ccckgjf9/production/9a7de8a77a136e7fe725dc7b443476ef1dbd841b-1250x782.jpg?rect=0,39,1250,703&w=1920&h=1080&fit=max&auto=format",
+    onTeam: false,
   },
 ];
 

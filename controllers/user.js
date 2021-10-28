@@ -5,6 +5,7 @@
 const express = require("express");
 const User = require("../models/user")
 const bcrypt = require("bcryptjs")
+const God = require("../models/god");
 
 
 ///////////////////////////////////////
@@ -32,8 +33,10 @@ router.post("/signup", async (req, res) => {
   
   //save user in database
   User.create(req.body)
-    .then((user) =>
-      res.redirect("/login"))
+    .then((user) => {
+      res.redirect("/login")
+    })
+     
     .catch((error)=>{res.json(error)})
 })
 
@@ -83,9 +86,8 @@ router.get("/logout", (req, res) => {
 
 
 
-
 /////////////////////////
 //Export router
 /////////////////////////
 
-module.exports = router;
+module.exports = router
