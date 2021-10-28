@@ -120,3 +120,6 @@ select:focus{
   box-shadow: red;
   border:2px solid red;
 }
+label,legend{
+  color:gold;
+}

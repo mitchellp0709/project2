@@ -41,6 +41,69 @@ const godsSeed = [
       "Every 18 seconds, Agni gains a flaming halo that can be expended to summon a giant meteor at his ground target location. He can summon 1 every .8 seconds. Ignites Noxious Fumes.",
     img: "https://i.ytimg.com/vi/w_aGSGzkysU/maxresdefault.jpg",
   },
+  {
+    name: "Ah Muzen Cab",
+    damageType: "Physical",
+    class: "Hunter",
+    passive: "Bees!",
+    passiveDes:
+      "Enemies afflicted by Bees! take damage every .5s for 2s, are revealed on the minimap, and swarm nearby enemies. Basic Attacks refresh and extend the duration of Bees! by 1s. This damage does not trigger Item effects.",
+    ability1: "Hive",
+    ability1Des:
+      "Bees swarm at the ground target location, creating a new Hive that provides movement and Attack Speed Buffs to Ah Muzen Cab. He also heals for a small amount every second while he remains close to the Hives. Hives reveal enemies within 20 units of them. The Hives can only be destroyed by Basic Attacks (maximum 7 Hives).",
+    ability2: "Swarm",
+    ability2Des:
+      "Ah Muzen Cab summons a large swarm of bees that fly forward in a path in front of him, dealing damage to all enemies hit and applying Bees to them.",
+    ability3: "Honey",
+    ability3Des:
+      "Ah Muzen Cab sprays honey that lasts for 4s at a moveable ground target location, Slowing all enemies in the area. Bees from Hives within 90 units and Swarm will fly over to protect the honey, dealing damage every .5 second and applying Bees! to all enemies as they leave the honey.",
+    ult: "Stinger",
+    ultDes:
+      "Ah Muzen Cab fires off an enormous stinger that deals damage to all enemies in a line, sticking into the first god that is hit, applying Bees! and Crippling them for 3 seconds. If the target dies or after 3 seconds, the stinger falls onto the ground for 4 seconds. If Ah Muzen Cab picks up his stinger, he gains a significant reduction to Stinger's Cooldown.",
+    img: "https://i.pinimg.com/736x/48/bd/dd/48bddd2fad13b0c7458a7b91095c1b3f.jpg",
+  },
+  {
+    name: "Ah Puch",
+    damageType: "Magical",
+    class: "Mage",
+    passive: "Hollow Ground",
+    passiveDes:
+      "Ah Puch is closely attuned with the dead and may exhume corpses at his will. When walking over a decaying corpse, Ah Puch lowers the cooldown of Undead Surge and Corpse Explosion by 2s, restores 7% of his maximum Health and 3% of his maximum Mana.",
+    ability1: "Undead Surge",
+    ability1Des:
+      "Ah Puch raises up to two decaying corpses from the underworld that surge forward exploding on anything they touch, when they reach max distance, or when Ah Puch reactivates Undead Surge dealing damage and slowing targets hit. Enemies hit also have their healing reduced by 40% for 5s. The corpses collapse after exploding remaining behind.",
+    ability2: "Corpse Explosion",
+    ability2Des:
+      "Ah Puch causes the target area to explode dealing damage. Corpse Explosion also causes any decaying corpses in the area to explode.",
+    ability3: "Fleeting Breath",
+    ability3Des:
+      "Ah Puch throws a charm from the underworld which awakens a decaying corpse that applies miasma to targets in an area and falls to the ground, remaining behind. Targets take damage every second. After the duration, targets take additional damage and are stunned if they were healed by an ability during the initial duration.",
+    ult: "Empty the Crypts",
+    ultDes:
+      "Ah Puch unleashes an army of Wraiths from the Ninth Hell that swarm forward and reduce healing and deal damage to enemies they collide with.",
+    img: "https://i.ytimg.com/vi/PDQW_nAgQRU/maxresdefault.jpg",
+  },
+  {
+    name: "Amaterasu",
+    damageType: "Physical",
+    class: "Warrior",
+    passive: "Illuminating Strike",
+    passiveDes:
+      "Amaterasu illuminates enemies she hits with basic attacks. After 3 hits on the same target the enemy gains an aura, exposing their weaknesses and causing them to take more damage from all sources. Any other enemies that come near the afflicted target are weakened as well.",
+    ability1: "Diving Presence",
+    ability1Des:
+      "Amaterasu harnesses the power of her jewel, healing herself every second for 4 seconds and creating a persistent aura that buffs nearby allied gods. Every time this ability is activated the aura switches between Valor and Benevolence.",
+    ability2: "Heavenly Reflection",
+    ability2Des:
+      "Amaterasu charges her mirror for 5 seconds. While the mirror is charging she takes decreased damage. By activating the ability again or at the end of 5 seconds she will fire her mirror straight ahead, dealing damage. The mirror can be charged by successfully attacking enemies or from taking damage, and will deal up to double the base damage when fully charged.",
+    ability3: "Glorious Charge",
+    ability3Des:
+      "Amaterasu shines light off of her sacred blade, silencing all enemies in front of her. She then dashes forward while dealing damage, piercing through minions or stopping at the first god hit.",
+    ult: "Dazzling Offensive",
+    ultDes:
+      "Amaterasu focuses the power of the heavens into an impressive 3 strike combination attack. The 2nd hit will do 20% more base damage and slow enemies by 30%. The 3rd hit will do 40% more base damage and stun enemies. She must hit an enemy with the 1st hit to receive the increased damage and CC on the 2nd hit. The same rule applies to the 2nd and 3rd hits.",
+    img: "https://i1.sndcdn.com/artworks-000145083322-tjshgf-t500x500.jpg",
+  },
 ];
 
 module.exports=godsSeed
