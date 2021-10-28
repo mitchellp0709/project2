@@ -14,8 +14,9 @@ const methodOverride = require("method-override")
 //const mongoose = require("mongoose")
 //helps for file paths
 const path = require("path")
-//Import Router
+//Import Routers
 const GodRouter = require("./controllers/god.js")
+const UserRouter = require("./controllers/user.js")
 
 
 ////////////////////////////////
@@ -95,6 +96,16 @@ app.use(methodOverride("_method"))
 app.use(express.urlencoded({ extended: true }))
 //setup public folder to serve files
 app.use(express.static("public"))
+//session middleware
+const session = require("express-session")
+//create sessions in Mongo
+const MongoStore = require("connect-mongo")
+//middleware to create sessions
+app.use(session({
+  secret: process.env.SECRET,
+  store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+  resave: false
+}))
 
 
 //////////////////////////////////////////
@@ -231,8 +242,10 @@ app.use(express.static("public"))
 
 
 
-//register router
-app.use("/gods",GodRouter)
+//register routers
+app.use("/gods", GodRouter)
+app.use("/user",UserRouter)
+
 
 
 

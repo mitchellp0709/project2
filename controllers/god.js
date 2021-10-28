@@ -17,13 +17,13 @@ const router = express.Router()
 ////////////////////////////////
 //Router middleware
 ///////////////////////////////
-// router.use((req, res, next) => {
-//   if (req.session.loggedIn) {
-//     next()
-//   } else {
-//     res.redirect("/user/login")
-//   }
-// })
+router.use((req, res, next) => {
+  if (req.session.loggedIn) {
+    next()
+  } else {
+    res.redirect("/user/login")
+  }
+})
 
 
 ///////////////////////////////////
