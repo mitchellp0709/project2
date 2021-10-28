@@ -11,31 +11,34 @@ const morgan = require("morgan")
 //allows to swap method requests
 const methodOverride = require("method-override")
 //database
-const mongoose = require("mongoose")
+//const mongoose = require("mongoose")
 //helps for file paths
 const path = require("path")
+//Import Router
+const GodRouter = require("./controllers/god.js")
+
 
 ////////////////////////////////
 //Establish database connection
 ////////////////////////////////
 
 //sets inputs for mongoose connection
-const DATABASE_URL = process.env.DATABASE_URL
-const CONFIG = {
-  useNewUrlParser: true,
-  useUnifiedTopology:true
-}
+// const DATABASE_URL = process.env.DATABASE_URL
+// const CONFIG = {
+//   useNewUrlParser: true,
+//   useUnifiedTopology:true
+// }
 
 ////////////////////////////////
 //Connect to Mongo
 ////////////////////////////////
-mongoose.connect(DATABASE_URL,CONFIG)
+// mongoose.connect(DATABASE_URL,CONFIG)
 
-//connection message
-mongoose.connection
-.on("open",()=>{console.log("connected to Mongo")})
-.on("close",()=>{console.log("disconnected from Mongo")})
-.on("error",()=>{console.log(error)})
+// //connection message
+// mongoose.connection
+// .on("open",()=>{console.log("connected to Mongo")})
+// .on("close",()=>{console.log("disconnected from Mongo")})
+// .on("error",()=>{console.log(error)})
 
 
 ////////////////////////////////
@@ -43,28 +46,28 @@ mongoose.connection
 ////////////////////////////////
 
 //deconstruct schema and model
-const {Schema,model} = mongoose
+// const {Schema,model} = mongoose
 
-const godSchema = new Schema({
-  name: { type: String, required: true },
-  damageType: { type: String, required: true },
-  class: { type: String, required: true },
-  passive: { type: String, required: true },
-  passiveDes: { type: String, required: true },
-  ability1: { type: String },
-  ability1Des: { type: String },
-  ability2: { type: String },
-  ability2Des: { type: String },
-  ability3: { type: String },
-  ability3Des: { type: String },
-  ult: { type: String },
-  ultDes: { type: String },
-  img: String,
-});
+// const godSchema = new Schema({
+//   name: { type: String, required: true },
+//   damageType: { type: String, required: true },
+//   class: { type: String, required: true },
+//   passive: { type: String, required: true },
+//   passiveDes: { type: String, required: true },
+//   ability1: { type: String },
+//   ability1Des: { type: String },
+//   ability2: { type: String },
+//   ability2Des: { type: String },
+//   ability3: { type: String },
+//   ability3Des: { type: String },
+//   ult: { type: String },
+//   ultDes: { type: String },
+//   img: String,
+// });
 
-//Make the model
+// //Make the model
 
-const God = model("God",godSchema)
+// const God = model("God",godSchema)
 
 ////////////////////////////////
 //Create app object and configure liquid
@@ -98,23 +101,16 @@ app.use(express.static("public"))
 //Seed Data
 //////////////////////////////////////////
 
-const godSeed=require("./seed");
+// const godSeed=require("./seed");
 
 
-app.get("/gods/seed", (req, res) => {
-  God.deleteMany({})
-    .then((data) => {
-      God.create(godSeed)
-      .then((data)=>{res.redirect("/gods")})
-  })
-})
-
-
-
-
-
-
-
+// app.get("/gods/seed", (req, res) => {
+//   God.deleteMany({})
+//     .then((data) => {
+//       God.create(godSeed)
+//       .then((data)=>{res.redirect("/gods")})
+//   })
+// })
 
 
 
@@ -127,99 +123,97 @@ app.get("/gods/seed", (req, res) => {
 //Routes
 /////////////////////////////////////////////////////////
 
-//INDEX ROUTE
+// //INDEX ROUTE
 
-app.get("/gods", (req, res) => {
-  God.find({})
-    .then((gods) => {
-      res.render("gods/index.liquid",{gods});
-  })
-    .catch((error)=>{res.json(error)})
+// app.get("/gods", (req, res) => {
+//   God.find({})
+//     .then((gods) => {
+//       res.render("gods/index.liquid",{gods});
+//   })
+//     .catch((error)=>{res.json(error)})
 
   
-})
+// })
 
-//NEW ROUTE
+// //NEW ROUTE
 
-app.get("/gods/new", (req, res) => {
-  res.render("gods/new.liquid")
-})
+// app.get("/gods/new", (req, res) => {
+//   res.render("gods/new.liquid")
+// })
 
-//CREATE ROUTE
-app.post("/gods", (req, res) => {
-  if (req.body.class === "Mage" || req.body.class === "Guardian") {
-    req.body.damageType = "Magical"
-  } else {
-    req.body.damageType = "Physical"
-  }
+// //CREATE ROUTE
+// app.post("/gods", (req, res) => {
+//   if (req.body.class === "Mage" || req.body.class === "Guardian") {
+//     req.body.damageType = "Magical"
+//   } else {
+//     req.body.damageType = "Physical"
+//   }
 
-  God.create(req.body)
-    .then((god) => {
-      res.redirect("/gods");
-    })
-    .catch((error) => {res.json(error)})
-})
+//   God.create(req.body)
+//     .then((god) => {
+//       res.redirect("/gods");
+//     })
+//     .catch((error) => {res.json(error)})
+// })
 
-//EDIT ROUTE
+// //EDIT ROUTE
 
-app.get("/gods/:id/edit", (req, res) => {
-  const id = req.params.id
+// app.get("/gods/:id/edit", (req, res) => {
+//   const id = req.params.id
 
-  if (req.body.class === "Mage" || req.body.class === "Guardian") {
-    req.body.damageType = "Magical";
-  } else {
-    req.body.damageType = "Physical";
-  }
-  God.findById(id)
-    .then((god) => {
-      res.render("gods/edit.liquid", { god });
-    })
-    .catch((error) => {res.json(error)});
-})
-
-
-//UPDATE ROUTE
-
-app.put("/gods/:id", (req, res) => {
-  const id = req.params.id
-  God.findByIdAndUpdate(id, req.body, { new: true })
-    .then((god) => {
-      res.redirect("/gods");
-    })
-    .catch((error) => {res.json(error)})
-})
+//   if (req.body.class === "Mage" || req.body.class === "Guardian") {
+//     req.body.damageType = "Magical";
+//   } else {
+//     req.body.damageType = "Physical";
+//   }
+//   God.findById(id)
+//     .then((god) => {
+//       res.render("gods/edit.liquid", { god });
+//     })
+//     .catch((error) => {res.json(error)});
+// })
 
 
+// //UPDATE ROUTE
 
-//DELETE ROUTE
-
-app.delete("/gods/:id", (req, res) => {
-  const id = req.params.id
-  God.findByIdAndRemove(id)
-    .then((god) => {
-      res.redirect("/gods");
-    })
-    .catch((error) => {res.json(error)});
-})
+// app.put("/gods/:id", (req, res) => {
+//   const id = req.params.id
+//   God.findByIdAndUpdate(id, req.body, { new: true })
+//     .then((god) => {
+//       res.redirect("/gods");
+//     })
+//     .catch((error) => {res.json(error)})
+// })
 
 
+
+// //DELETE ROUTE
+
+// app.delete("/gods/:id", (req, res) => {
+//   const id = req.params.id
+//   God.findByIdAndRemove(id)
+//     .then((god) => {
+//       res.redirect("/gods");
+//     })
+//     .catch((error) => {res.json(error)});
+// })
 
 
 
 
 
 
-//SHOW ROUTE
-app.get("/gods/:id", (req, res) => {
-  const id = req.params.id
-  God.findById(id)
-    .then((god) => {
-      res.render("gods/show.liquid", {god});
-    })
-    .catch((error) => {res.json(error)});
-})
 
 
+// //SHOW ROUTE
+// app.get("/gods/:id", (req, res) => {
+//   const id = req.params.id
+//   God.findById(id)
+//     .then((god) => {
+//       res.render("gods/show.liquid", {god});
+//     })
+//     .catch((error) => {res.json(error)});
+// })
 
 
 
@@ -236,6 +230,9 @@ app.get("/gods/:id", (req, res) => {
 
 
 
+
+//register router
+app.use("/gods",GodRouter)
 
 
 
