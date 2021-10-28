@@ -1,31 +1,63 @@
-{% layout "layout.liquid" %} 
-{% block content %}
+{% layout "layout.liquid" %} {% block content %}
 
 <h1>Team Page</h1>
-<a href="/gods"><button>Return to Gods Page</button></a>
+<a href="/gods"><button id="return">Return to Gods Page</button></a>
 
-<div class = "all">
+<div class="all">
   {% for god in gods %}
 
-
-  <div class="card-team" >
-   <a id="team-pic" href="/gods/{{god._id}}"><img src="{{god.img}}" class="card-img-top" alt="..."></a>
-   <h5 class="card-title1-team">{{god.name}}</h5>
-    <div class="card-body">
-      
-     <h6>Damage Type: {{god.damageType}}</h6>
-    <div class="buttons-team">
-      <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
-      <a href="/gods/{{god._id}}/removeTeam"><button>Remove from Team</button></a>
-
-      
-     
+  <div class="card-team">
+    <div class="left-column">
+       <a href="/gods/{{ god._id }}"
+      ><img class="team-pic" src="{{ god.img }}" alt="..."
+    /></a>
+      <div class="other-info">
+      <p>Class: {{ god.class }}</p>
+      <p>Damage Type: {{ god.damageType }}</p>
     </div>
+      <div class="buttons-team">
+        <a href="/gods/{{ god._id }}/edit" class="card-link"
+          ><button>Edit</button></a
+        >
+        <a href="/gods/{{ god._id }}/removeTeam"
+          ><button>Remove from Team</button></a
+        >
+      </div>
+    </div>
+
+
+    <div class="right-column">
+
+      <h3 class="card-title1-team">{{ god.name }}</h3>
+     
+      <div class="abilitesa">
+        <article>
+          <h5>{{ god.passive }}</h5>
+          <p>{{ god.passiveDes }}</p>
+        </article>
+        <article>
+          <h5>{{ god.ability1 }}</h5>
+          <p>{{ god.ability1Des }}</p>
+        </article>
+        <article>
+          <h5>{{ god.ability2 }}</h5>
+          <p>{{ god.ability2Des }}</p>
+        </article>
+        <article>
+          <h5>{{ god.ability3 }}</h5>
+          <p>{{ god.ability3Des }}</p>
+        </article>
+        <article>
+          <h5>{{ god.ult }}</h5>
+          <p>{{ god.ultDes }}</p>
+        </article>
+      </div>
+    </div>
+    
+      
+      
+    
+    
   </div>
+  {%endfor%} {% endblock %}
 </div>
-    {%endfor%}
-
-
-   
-
-    {% endblock %}

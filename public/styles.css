@@ -4,10 +4,16 @@
 
 body{
   background-image: url("https://www.psu.com/wp/wp-content/uploads/2019/09/smite-and-realm-royale-to-get-crossplay-in-the-future.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
 }
  .all{
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-around;
  }
  .card{
     width:20%;
@@ -130,16 +136,46 @@ label,legend{
    padding: 20px;
    height:fit-content;
    margin:10px;
-   height:500px;
-   display: flex;
-   justify-content: space-between;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   column-gap: 20px;
    background-color: rgba(0,0,0,.7);
   }
 
   .card-title1-team{
-    position:relative;
-    top:5px;
+   position:relative;
+   left:400px;
+   width:max-content;
+    color:white;
   }
-  #team-pic{
-    width:fit-content
+  .team-pic{
+    width:100%;
+    height:auto;
+    
+  }
+
+  .abilitesa{
+    display:flex;
+    flex-direction: column;
+    margin-top:40px;
+  }
+  /* .buttons-team{
+    position:relative;
+    left:30%;
+    bottom:0;
+  } */
+  /* .other-info{
+    position:relative;
+    right:1375px;
+    top: 250px;
+    width:max-content
+  } */
+  .left-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #return{
+    position: relative;
+    left:10%;
   }
