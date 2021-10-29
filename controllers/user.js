@@ -26,6 +26,7 @@ router.get("/signup",(req, res) => {
   res.render("user/signup.liquid")
 })
 
+//CREATE USER
 
 router.post("/signup", async (req, res) => {
 

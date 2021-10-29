@@ -1,51 +1,58 @@
-{% layout "layout.liquid" %} 
-{% block content %}
+{% layout "layout.liquid" %} {% block content %}
 
 <h1>Welcome to the Battleground</h1>
 
-
 <div id="teamModal">
   <a id="close" href="#">Close</a>
-  <h1 class="modal-text"> Welcome to the Smite Home Page!</h1> <br>
-  <p>Welcome to the site! This site allows you to view the abilities, passive, and characteristics of all gods in Smite! Click 'Add to Team' to begin building your perfect compisition to crush your enemies!</p>
+  <h1 class="modal-text">Welcome to the Smite Home Page!</h1>
+  <br />
+  <p>
+    Welcome to the site! This site allows you to view the abilities, passive,
+    and characteristics of all gods in Smite! Click 'Add to Team' to begin
+    building your perfect composition to crush your enemies!
+  </p>
 </div>
-
-
-
-
 
 <nav class="main-nav">
   <a href="/gods/new">New God</a>
   <a href="/gods/team">View Team</a>
   <a href="/gods/reset">Reset Gods to Default</a>
   <a id="about" href="#">About Site</a>
-  <a href = "/user/logout">Logout</a>
-</nav> <br>
+  <a href="/user/logout">Logout</a>
+</nav>
+<br />
 
 <div class="all">
   {% for god in gods %}
 
-
-  <div class="card" >
-   <a href="/gods/{{god._id}}"><img src="{{god.img}}" class="card-img-top" alt="..."></a>
+  <div class="card">
+    <a href="/gods/{{ god._id }}"
+      ><img src="{{ god.img }}" class="card-img-top" alt="..."
+    /></a>
     <div class="card-body">
-    <h5 class="card-title1"><a href="/gods/{{god._id}}">{{god.name}}</a></h5>
-    
-    <div class="buttons">
-      <a href="/gods/{{god._id}}/addteam"><button class="addTeam" id="{{god.name}}">Add to Team</button></a>
+      <h5 class="card-title1">
+        <a href="/gods/{{ god._id }}">{{ god.name }}</a>
+      </h5>
 
-      <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
-     <form class ="card-link" action="/gods/{{god._id}}?_method=DELETE" method=post>
-        <input type="submit" value="DELETE">
-      </form>
+      <div class="buttons">
+        <a href="/gods/{{ god._id }}/addteam"
+          ><button class="addTeam" id="{{ god.name }}">Add to Team</button></a
+        >
+
+        <a href="/gods/{{ god._id }}/edit" class="card-link"
+          ><button>Edit</button></a
+        >
+        <form
+          class="card-link"
+          action="/gods/{{ god._id }}?_method=DELETE"
+          method="post"
+        >
+          <input type="submit" value="DELETE" />
+        </form>
+      </div>
     </div>
   </div>
-</div>
-    {%endfor%}
-
+  {%endfor%}
 </div>
 
-
-   
-
-    {% endblock %}
+{% endblock %}
