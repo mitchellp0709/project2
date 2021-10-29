@@ -134,6 +134,10 @@ app.use(session({
 //Routes
 /////////////////////////////////////////////////////////
 
+app.get("/", (req, res) => {
+  res.redirect("/gods")
+})
+
 // //INDEX ROUTE
 
 // app.get("/gods", (req, res) => {
