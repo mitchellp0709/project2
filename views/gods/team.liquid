@@ -3,6 +3,11 @@
 <h1>Team Page</h1>
 <a href="/gods"><button id="return">Return to Gods Page</button></a>
 
+
+
+
+
+
 <div class="all">
   {% for god in gods %}
 
@@ -19,8 +24,8 @@
         <a href="/gods/{{ god._id }}/edit" class="card-link"
           ><button>Edit</button></a
         >
-        <a href="/gods/{{ god._id }}/removeTeam"
-          ><button>Remove from Team</button></a
+        <a href="/gods/{{ god._id }}/removeteam"
+          ><button class="removeTeam">Remove from Team</button></a
         >
       </div>
     </div>

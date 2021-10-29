@@ -3,6 +3,17 @@
 
 <h1>Welcome to the Battleground</h1>
 
+
+<div id="teamModal">
+  <a id="close" href="#">Close</a>
+  <h1 class="modal-text"> Welcome to the Smite Home Page!</h1> <br>
+  <p>Welcome to the site! This site allows you to view the abilities, passive, and characteristics of all gods in Smite! Click 'Add to Team' to begin building your perfect compisition to crush your enemies!</p>
+</div>
+
+
+
+
+
 <nav class="main-nav">
   <a href="/gods/new">New God</a>
   <a href="/gods/team">View Team</a>
@@ -20,7 +31,7 @@
     <h5 class="card-title1"><a href="/gods/{{god._id}}">{{god.name}}</a></h5>
     
     <div class="buttons">
-      <a href="/gods/{{god._id}}/addteam"><button>Add to Team</button></a>
+      <a href="/gods/{{god._id}}/addteam"><button class="addTeam" id="{{god.name}}">Add to Team</button></a>
 
       <a href="/gods/{{god._id}}/edit" class="card-link"><button>Edit</button></a>
      <form class ="card-link" action="/gods/{{god._id}}?_method=DELETE" method=post>
@@ -32,6 +43,8 @@
     {%endfor%}
 
 </div>
+
+
    
 
     {% endblock %}

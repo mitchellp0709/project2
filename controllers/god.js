@@ -158,6 +158,12 @@ router.get("/team", (req, res) => {
     .catch((error)=>{res.json(error)})
 })
 
+
+
+
+
+
+
 //RESET ROUTE
 router.get("/reset", (req, res) => {
 
