@@ -73,7 +73,7 @@ color:red;
  .card-img-top:hover{
   opacity: .8;
  }
- nav{
+ .show-nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -178,4 +178,14 @@ label,legend{
   #return{
     position: relative;
     left:10%;
+  }
+  .main-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:red;
+  }
+  .main-nav,a{
+    color:gold;
+   
   }

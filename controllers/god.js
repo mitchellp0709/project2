@@ -171,8 +171,7 @@ router.get("/reset", (req, res) => {
        God.create(starter).then((data) => {
          res.redirect("/gods");
        });
-  })
-     
+    })
   })
 
 

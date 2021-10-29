@@ -2,11 +2,15 @@
 {% block content %}
 
 <h1>Welcome to the Battleground</h1>
-<div class="top-buttons">
-<a href="/gods/new"><button>New God</button></a>
-<a href="/gods/team"><button>View Team</button></a>
-</div>
-<div class = "all">
+
+<nav class="main-nav">
+  <a href="/gods/new">New God</a>
+  <a href="/gods/team">View Team</a>
+  <a href="/gods/reset">Reset Gods to Default</a>
+  <a href = "/user/logout">Logout</a>
+</nav> <br>
+
+<div class="all">
   {% for god in gods %}
 
 
@@ -27,7 +31,7 @@
 </div>
     {%endfor%}
 
-
+</div>
    
 
     {% endblock %}
