@@ -5,5 +5,8 @@ $close.on("click", (event) => {
   $("#teamModal").hide()
 })
 
-
+$("#about").on("click", (event) => {
+  event.preventDefault();
+  $("#teamModal").show()
+})
 

@@ -114,7 +114,16 @@ input[type="text"],textarea,select{
   color:gold;
   outline:2px solid gold;;
 }
+input[type="password"]{
+  background-color:rgba(77,153,169,.8);
+  color:gold;
+  outline:2px solid gold;;
+}
 input[type="text"]:focus{
+  box-shadow: red;
+  border:2px solid red;
+}
+input[type="password"]:focus{
   box-shadow: red;
   border:2px solid red;
 }
@@ -202,13 +211,15 @@ label,legend{
   width:100%;
   z-index: 5;
   overflow:auto;
+  display:none;
     
   }
-  .close{
-    color:gold;
+  #close{
+    color:red;
     margin:20px;
     margin-top:20px;
     text-align: center;
+    font-weight: bold;
   }
   .close:hover{
     cursor: pointer;
@@ -240,4 +251,10 @@ label,legend{
     display:flex;
     flex-direction: column;
     align-items: center;
+  }
+  .LISU{
+    font-size: 2em;
+  }
+  ::placeholder{
+    color:black;
   }
