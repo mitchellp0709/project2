@@ -27,6 +27,7 @@ const godSchema = new Schema({
   ultDes: { type: String },
   img: String,
   onTeam: Boolean,
+  username: String
 });
 
 const God = model("God", godSchema)

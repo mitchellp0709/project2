@@ -46,10 +46,11 @@ router.get("/seed", (req, res) => {
 
 
 
+
 //INDEX ROUTE
 
 router.get("/", (req, res) => {
-  God.find({})
+  God.find({username:req.session.username})
     .then((gods) => {
       res.render("gods/index.liquid", { gods });
     })
@@ -72,6 +73,7 @@ router.post("/", (req, res) => {
     req.body.damageType = "Physical";
   }
 
+  req.body.username=req.session.username
   God.create(req.body)
     .then((god) => {
       res.redirect("/gods");
@@ -149,13 +151,29 @@ router.get("/:id/removeteam", (req, res) => {
 
 router.get("/team", (req, res) => {
   
-  God.find({ onTeam: true })
+  God.find({ onTeam: true, username:req.session.username })
     .then((gods) => {
     res.render("gods/team.liquid",{gods})
     })
     .catch((error)=>{res.json(error)})
 })
 
+//RESET ROUTE
+router.get("/reset", (req, res) => {
+
+  
+  God.deleteMany({ username: req.session.username })
+    .then((data) => {
+      const username = req.session.username;
+      const starter = [...godSeed].map((g) => {
+          return { ...g, username };
+        });
+       God.create(starter).then((data) => {
+         res.redirect("/gods");
+       });
+  })
+     
+  })
 
 
 

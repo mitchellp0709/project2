@@ -6,6 +6,7 @@ const express = require("express");
 const User = require("../models/user")
 const bcrypt = require("bcryptjs")
 const God = require("../models/god");
+const seed = require("../seed")
 
 
 ///////////////////////////////////////
@@ -34,7 +35,15 @@ router.post("/signup", async (req, res) => {
   //save user in database
   User.create(req.body)
     .then((user) => {
-      res.redirect("/login")
+      const username = user.username
+      const starter = [...seed].map((g) => {
+        return {...g,username}
+      })
+      God.create(starter)
+        .then((data) => {
+        res.redirect("/user/login")
+      })
+      
     })
      
     .catch((error)=>{res.json(error)})
@@ -80,7 +89,7 @@ router.get("/logout", (req, res) => {
   //delete session
   req.session.destroy((err) => {
     //send user back to the main page 
-    res.redirect("/")
+    res.redirect("/user/login")
   })
 })
 
