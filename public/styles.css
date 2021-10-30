@@ -262,3 +262,51 @@ label,legend{
 #white{
   color:white
 }
+
+/* RESPONSIVE STYLING */
+@media (max-width: 800px) {
+  
+.card{
+  width:80%;
+  
+}
+.main-nav{
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-around  ;
+
+}
+
+.main-nav a{
+  width:fit-content;
+  padding: 2px;
+  border: 2px solid white;
+  margin-bottom: 5px;
+}
+
+.show-pic{
+  width:100%;
+ height: fit-content;
+ display: flex;
+ justify-content:center;
+}
+
+.show-nav{
+  width:90%;
+  margin-left: 5%;
+
+}
+.abilities{
+  width:100%;
+  display: block;
+
+}
+.card-team{
+  display:block;
+  margin:0;
+}
+.all{
+  margin:0;
+}
+
+}
