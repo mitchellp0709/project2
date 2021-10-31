@@ -10,6 +10,8 @@ Users will be able to log in and complie a team from the gods in the database or
 
 ## Tools & Libraries Used
 -CSS - Styling for the pages
+-CSS Reset- CSS framework
+-Milligram CSS- CSS framework
 -Javascript - Host a server and create routers to generate pages to Liquid via React
 -jQuery - Create modal
 -Express - Used to create servers and generate pages to Liquid
