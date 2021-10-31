@@ -29,7 +29,8 @@ body{
    background-color: rgba(0,0,0,.7);
   }
   h1{
-    color:var(--main);
+    color:white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     text-align: center;
   }
   .card-title1{
@@ -92,7 +93,8 @@ color:red;
     width:30%
   }
   h2{
-    color: var(--main);
+    color: white;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     text-align: center;
   }
   .abilities{
@@ -193,10 +195,11 @@ label,legend{
     justify-content: space-around;
     align-items: center;
     background-color:red;
+    
   }
   .main-nav,a{
     color:gold;
-   
+  
   }
 
 
@@ -263,6 +266,10 @@ label,legend{
   color:white
 }
 
+
+
+
+
 /* RESPONSIVE STYLING */
 @media (max-width: 800px) {
   
@@ -273,7 +280,9 @@ label,legend{
 .main-nav{
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-around  ;
+  justify-content: space-around;
+  padding-top:5px;
+ 
 
 }
 
@@ -291,11 +300,14 @@ label,legend{
  justify-content:center;
 }
 
-.show-nav{
-  width:90%;
-  margin-left: 5%;
+/* .show-nav{
+ 
+  margin:0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 
-}
+} */
 .abilities{
   width:100%;
   display: block;
@@ -307,6 +319,20 @@ label,legend{
 }
 .all{
   margin:0;
+}
+
+body,main,.show-nav,.show-pic,.all, .show-pic img, .abilites, .abilities div, h1, h2{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+.card-title1-team{
+  display: none;
+}
+
+.abilities div{
+  margin-bottom:20px;
 }
 
 }
